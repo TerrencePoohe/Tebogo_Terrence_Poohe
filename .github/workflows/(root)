@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe4e1;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff69b4;
+            color: white;
+            cursor: pointer;
+        }
+
+        #letter {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            margin: 0 auto 20px;
+            transform: rotate(-45deg);
+            animation: vibrate 0.3s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+
+        @keyframes vibrate {
+            0% { transform: rotate(-45deg) translate(0, 0); }
+            25% { transform: rotate(-45deg) translate(-2px, -2px); }
+            50% { transform: rotate(-45deg) translate(2px, 2px); }
+            75% { transform: rotate(-45deg) translate(-2px, 2px); }
+            100% { transform: rotate(-45deg) translate(0, 0); }
+        }
+
+        @keyframes colorChange {
+            0% { color: red; }
+            25% { color: blue; }
+            50% { color: green; }
+            75% { color: purple; }
+            100% { color: red; }
+        }
+
+        .color-change {
+            animation: colorChange 5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="openButton">Open My Love Letter</button>
+        <div id="letter" class="hidden">
+            <div class="heart"></div>
+            <p class="color-change">My Dearest Love, Reabetswe</p>
+            <p class="color-change">Words cannot express the depth of my feelings for you. You are my sunshine, my happiness, and the love of my life. Every moment spent with you is a treasure that I hold dear. I love you more than words can say.</p>
+            <p class="color-change">Forever Yours,<br>Your Lover, Terrence</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('openButton').addEventListener('click', function() {
+            document.getElementById('letter').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
